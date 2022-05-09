@@ -3,6 +3,9 @@ import App from './App.vue'
 
 import router from './router'
 
+import 'prismjs/themes/prism-okaidia.css' // 引入markdown css
+import '@/asset/css/index.css' // 自定义css
+
 Vue.config.productionTip = false
 
 new Vue({
