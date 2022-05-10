@@ -5,3 +5,4 @@
 ## 收集列表
 1. 虚拟滚动 virtual-list
 2. worker多线程 vue-worker
+3. 滚动数字 scroll-digit
