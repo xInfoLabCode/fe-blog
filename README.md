@@ -1,8 +1,10 @@
 # 100个前端经典方案设计&实现
 
-> 项目计划收集100个经典的前端方案设计与实现，欢迎提交
+项目的目标是收集100个经典的前端方案，探究开发实现
 
-## 收集列表
-1. 虚拟滚动 virtual-list
-2. worker多线程 vue-worker
-3. 滚动数字 scroll-digit
+### 收集列表
++ scroll-digit [滚动的数字](https://fe100.xinfolab.com/#/case/scroll-digit) 
++ virtual-list [虚拟滚动](https://fe100.xinfolab.com/#/case/virtual-list)
++ worker [js多线程](https://fe100.xinfolab.com/#/case/worker)
+
+> 项目代码基于vue2.0实现
