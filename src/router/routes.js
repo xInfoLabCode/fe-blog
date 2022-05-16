@@ -6,13 +6,15 @@ export const componentRoutes = components.keys().reduce((res, key) => {
   if (keyArr.length === 3) {
     const component = components(key).default
     const componentName = keyArr[1] // 默认提取文件夹名称作为组件名称
+    const config = require(`@/components/${componentName}/config.js`)?.default || {} // 组件的说明信息等
 
     const newRoute = {
       path: `/case/${componentName}`,
       component,
       meta: {
-        name: componentName,
-        readme: () => import(`@/components/${componentName}/readme.md`)
+        id: componentName,
+        readme: () => import(`@/components/${componentName}/readme.md`),
+        ...config
       }
     }
 
@@ -30,6 +32,10 @@ const routes = [
   {
     path: '/index',
     component: () => import('@/pages/home')
+  },
+  {
+    path: '/test',
+    component: () => import('@/components/virtual-list/readme.md')
   },
   {
     path: '/case',

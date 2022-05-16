@@ -4,11 +4,13 @@
       <a href="/">首页</a>
       <div>{{ componentName }}</div>
     </div>
-    <div class="left-view">
-      <router-view />
-    </div>
-    <div class="right-desc">
-      <component :is="readme" />
+    <div class="content">
+      <div class="left-view">
+        <router-view />
+      </div>
+      <div class="right-desc">
+        <component :is="readme" />
+      </div>
     </div>
   </div>
 </template>
@@ -38,17 +40,19 @@ export default {
     margin-left: 20px;
   }
 }
-.left-view,
-.right-desc {
-  min-height: calc(100vh - 60px);
-  width: 50%;
-  float: left;
-  padding: 40px;
-}
-.left-view {
-  box-shadow: 0 0 40px #99999940 inset;
-}
-.right-desc {
-  box-shadow: 0 0 40px #99999940 inset;
+.content {
+  display: flex;
+  .left-view,
+  .right-desc {
+    min-height: calc(100vh - 60px);
+    width: 50%;
+    padding: 40px;
+  }
+  .left-view {
+    box-shadow: 0 0 40px #99999940 inset;
+  }
+  .right-desc {
+    box-shadow: 0 0 40px #99999940 inset;
+  }
 }
 </style>

@@ -7,4 +7,4 @@
 + virtual-list [虚拟滚动](https://fe100.xinfolab.com/#/case/virtual-list)
 + worker [js多线程](https://fe100.xinfolab.com/#/case/worker)
 
-> 项目代码基于vue2.0实现
+> 项目代码层面基于Vue2实现，组件可以平移到Vue3运行

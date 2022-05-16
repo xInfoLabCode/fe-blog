@@ -5,6 +5,16 @@
 </template>
 
 <script>
+import Vue from 'vue'
+import worker from 'vue-worker'
+
+Vue.use(worker)
+
+function test(a, b) {
+  console.log(111, a, b)
+  return a + b
+}
+
 export default {
   created() {
     this.init()
@@ -15,17 +25,13 @@ export default {
       this.createWorker()
     },
     runWorker() {
-      let worker = this.$worker.run(this.test.bind({}), [1, 2])
+      let worker = this.$worker.run(test, [1, 2])
 
       worker.then(res => {
-        console.log(222, res)
+        console.log(`this.$worker`, res)
       })
 
       worker = null // destroy worker
-    },
-    test(a, b) {
-      console.log(111, a, b)
-      return a + b
     },
     createWorker() {
       const actions = [
@@ -38,7 +44,7 @@ export default {
       workerList.postMessage('f2', [99, 101]).then(res => console.log('f2', res))
 
       workerList = null // destroy worker
-    }
+    },
   }
 }
 </script>

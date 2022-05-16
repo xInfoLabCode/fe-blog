@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <div class="head">vue-scroll-digit</div>
+    <div class="head">scroll-digit</div>
     <div class="demo-area">
       <scroll-digit
         :digits="digits"
@@ -115,7 +115,6 @@ export default {
   color: #999;
 }
 .args-area input {
-  width: 600px;
   padding: 8px;
   color: #666;
   font-size: 18px;

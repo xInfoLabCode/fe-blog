@@ -3,7 +3,8 @@
     <div class="title">100个经典前端设计案例</div>
     <div class="component-list">
       <div v-for="item in componentList" :key="item.url" class="component-list-item">
-        <a :href="item.url">{{ item.name }}</a>
+        <a :href="item.url" class="component-list-item-title">{{ item.id }} - {{ item.name }}</a>
+        <div class="component-list-item-description">{{ item.description }}</div>
       </div>
     </div>
   </div>
@@ -16,7 +17,7 @@ export default {
   computed: {
     componentList() {
       return componentRoutes.map(item => ({
-        name: item.meta.name,
+        ...item?.meta,
         url: `/#${item.path}`
       }))
     }
@@ -35,8 +36,17 @@ export default {
   padding: 50px;
 
   &-item {
-    height: 40px;
-    line-height: 40px;
+    padding: 10px 0 20px;
+
+    &-title {
+      display: block;
+      font-weight: 500;
+      line-height: 40px;
+    }
+    &-description {
+      font-size: 13px;
+      line-height: 20px;
+    }
   }
 }
 </style>
