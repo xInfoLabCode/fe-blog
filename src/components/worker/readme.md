@@ -1,6 +1,11 @@
-## Worker多线程
+# Worker多线程
 
-### 原生JS多线程
+## 1. 原生JS多线程
+
+> 页面运行worker，限制了worker.js需要与页面同源。本地js代码可以借助URL.createObjectURL和Data URL的方式规避
+
+### 1.1 URL.createObjectURL
+> vue-worker等库一般借助于URL.createObjectURL创建本地js文件的方式规避同源限制.
 
 ``` javascript
 <script>
@@ -27,6 +32,7 @@
     // worker必须使用页面同源的js，此处借助URL.createObjectURL转换
     const blob = new Blob([fnStr])
     const url = URL.createObjectURL(blob)
+    // 优化：URL.createObjectURL创建的资源必须手动通过URL.revokeObjectURL释放，否则需要刷新Browser Context时才会被释放
 
     const worker = new Worker(url)
     return worker
@@ -61,4 +67,25 @@
     worker.postMessage('terminate')
   }), 1000)
 </script>
+```
+
+### 1.2 Data URL
+> 除了URL.createObjectURL外，还可以通过Data URL实现。通过Data URL运行的js函数不能省略语句的分号
+
+``` javascript
+function threadFn () {
+  console.log('worker | init thread');
+
+  self.postMessage('create success');
+}
+
+function createWorker(fn) {
+  const worker = new Worker(`data:,(${fn.toString()})()`)
+  return worker
+}
+
+const worker = createWorker(threadFn)
+worker.onmessage = e => {
+  console.log('main | onmessage', e.data)
+}
 ```
