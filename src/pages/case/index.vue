@@ -44,9 +44,10 @@ export default {
   display: flex;
   .left-view,
   .right-desc {
-    min-height: calc(100vh - 60px);
+    height: calc(100vh - 60px);
     width: 50%;
     padding: 40px;
+    overflow: auto;
   }
   .left-view {
     box-shadow: 0 0 40px #99999940 inset;

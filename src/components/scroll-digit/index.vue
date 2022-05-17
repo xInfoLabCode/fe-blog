@@ -80,10 +80,11 @@ export default {
   flex-direction: column;
 }
 .head {
-  padding: 80px 0 20px;
+  padding: 20px 0;
   text-align: center;
   font-size: 30px;
   color: #666;
+  font-weight: 800;
 }
 .demo-area {
   height: 400px;
