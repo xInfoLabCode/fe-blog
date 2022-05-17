@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <a class="fork-me" href="https://github.com/brandom1225/100-classical-fe"></a>
+    <a class="fork-me" href="https://github.com/brandom1225/fe100"></a>
     <router-view />
   </div>
 </template>
