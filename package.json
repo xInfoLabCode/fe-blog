@@ -1,0 +1,8 @@
+{
+  "name": "fe100",
+  "version": "0.1.1",
+  "license": "MIT",
+  "scripts": {
+    "release": "node lib/release"
+  }
+}
