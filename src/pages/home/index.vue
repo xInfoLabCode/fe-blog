@@ -1,52 +1,66 @@
 <template>
-  <div>
-    <div class="title">100个经典前端设计案例</div>
-    <div class="component-list">
-      <div v-for="item in componentList" :key="item.url" class="component-list-item">
-        <a :href="item.url" class="component-list-item-title">{{ item.id }} - {{ item.name }}</a>
-        <div class="component-list-item-description">{{ item.description }}</div>
+  <div class="fe100">
+    <Header />
+    <div class="content">
+      <div class="blog-list">
+        <div v-for="blog in list" :key="blog.url" class="blog-list-item">
+          <Code v-if="blog.type === 'code'" :blog="blog" />
+          <Markdown v-if="blog.type === 'markdown'" :blog="blog" />
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { componentRoutes } from '@/router/routes' 
+import Header from '@/components/Header.vue'
+import Code from './components/Code.vue'
+import Markdown from './components/Markdown.vue'
+
+import codeRoutes from '@/router/code'
+import markdownRoutes from '@/router/markdown'
 
 export default {
-  computed: {
-    componentList() {
-      return componentRoutes.map(item => ({
+  components: {
+    Header,
+    Code,
+    Markdown
+  },
+  data() {
+    return {
+      list: []
+    }
+  },
+  created() {
+    this.init()
+  },
+  methods: {
+    init() {
+      const codeList = codeRoutes.map(item => ({
+        type: 'code',
         ...item?.meta,
         url: `/#${item.path}`
       }))
+
+      const markdownList = markdownRoutes.map(item => ({
+        type: 'markdown',
+        ...item?.meta,
+        url: `/#${item.path}`
+      }))
+
+      this.list = codeList.concat(markdownList)
     }
   }
 }
 </script>
 
 <style lang="less" scoped>
-.title {
-  height: 60px;
-  line-height: 60px;
-  padding: 0 50px;
-  border-bottom: 1px solid #d2d2d2;
-  font-size: 20px;
-}
-
-.component-list {
-  padding: 50px;
-
-  &-item {
-    padding: 10px 0 20px;
-
-    &-title {
-      line-height: 40px;
-      font-size: 16px;
-    }
-    &-description {
-      line-height: 16px;
-    }
+.content {
+  display: flex;
+  justify-content: center;
+  .blog-list {
+    max-width: 1200px;
+    padding: 50px 0;
   }
 }
 </style>

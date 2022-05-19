@@ -1,14 +1,36 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import routes from './routes'
-
 Vue.use(Router)
 
-console.info('Route Config', routes)
+import codeRoutes from './code'
+import markdownRoutes from './markdown'
 
 const router = new Router({
-  routes
+  routes: [
+    {
+      path: '*',
+      redirect: '/index'
+    },
+    {
+      path: '/index',
+      component: () => import('@/pages/home')
+    },
+    {
+      path: '/code',
+      component: () => import('@/pages/code'),
+      children: [
+        ...codeRoutes
+      ]
+    },
+    {
+      path: '/markdown',
+      component: () => import('@/pages/markdown'),
+      children: [
+        ...markdownRoutes
+      ]
+    }
+  ]
 })
 
 export default router
