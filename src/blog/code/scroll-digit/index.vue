@@ -83,15 +83,13 @@ export default {
   padding: 20px 0;
   text-align: center;
   font-size: 30px;
-  color: #666;
-  font-weight: 800;
 }
 .demo-area {
   height: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px dashed #0092ff;
+  border: 1px dashed #ddd;
   border-radius: 8px;
   margin-bottom: 20px;
 }
@@ -106,13 +104,10 @@ export default {
   padding: 10px;
 }
 .args-area > div > .title {
-  font-weight: 600;
-  color: #0092ff;
+  color: var(--theme-color);;
 }
 .args-area > div > .title > span {
-  font-size: .9em;
   margin-left: .5em;
-  font-weight: 400;
   color: #999;
 }
 .args-area input {
@@ -137,7 +132,7 @@ export default {
   margin-left: 20px;
 }
 .args-area input:focus-visible {
-  border: 1px solid #0092ff;
+  border: 1px solid var(--theme-color);
   outline: none;
 }
 </style>

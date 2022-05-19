@@ -22,8 +22,13 @@ export default {
   line-height: 60px;
   padding: 0 50px;
   text-align: left;
-  border-bottom: 1px solid #d2d2d2;
   font-size: 20px;
+  border-bottom: 1px solid #d2d2d2;
+  box-shadow: 0 1px 3px rgb(18 18 18 / 10%);
+
+  a {
+    color: var(--theme-color);
+  }
 
   .blog-name {
     margin-left: 20px;

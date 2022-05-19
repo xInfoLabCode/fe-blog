@@ -57,7 +57,7 @@ h1,h2,h3,h4,h5,h6 {
 
 p {
   margin-top: 0;
-  margin-bottom: 1em
+  margin-bottom: 1em;
 }
 
 abbr[data-original-title],abbr[title] {
@@ -128,7 +128,7 @@ sup {
 }
 
 a {
-  color: #0092ff;
+  color: var(--theme-color);;
   text-decoration: none;
   background-color: transparent;
   outline: none;
@@ -139,11 +139,11 @@ a {
 }
 
 a:hover {
-  color: #0092ff
+  color: var(--theme-color-dark);
 }
 
 a:active {
-  color: #0092ff
+  color: var(--theme-color-dark);
 }
 
 a:active,a:hover {
@@ -331,14 +331,6 @@ b,h1,h2,h3,h4,h5,h6,strong {
 h1,h2,h3,h4,h5,h6 {
   color: #404040;
   text-rendering: optimizelegibility
-}
-
-a {
-  color: #0681d0
-}
-
-a:hover {
-  color: #056bad
 }
 
 input {

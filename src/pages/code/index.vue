@@ -39,10 +39,7 @@ export default {
       overflow: auto;
     }
     .left-view {
-      box-shadow: 0 0 40px #99999940 inset;
-    }
-    .right-desc {
-      box-shadow: 0 0 40px #99999940 inset;
+      border-right: 1px solid #99999940;
     }
   }
 }

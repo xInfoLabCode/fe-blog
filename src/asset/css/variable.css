@@ -1,5 +1,6 @@
 :root {
-  --color-a: #0969da;
+  --theme-color: rgb(0, 102, 255);
+  --theme-color-dark: #06f;
 
   --font-size: 16px;
   --font-size-s: 13px;

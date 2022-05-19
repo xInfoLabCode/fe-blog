@@ -42,7 +42,6 @@ export default {
 <style scoped >
 .scroll-digit {
   display: inline-block;
-  font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace;
 }
 .scroll-digit > div {
   display: inline-block;

@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "core-js": "^3.8.3",
+    "highlight": "^0.2.4",
     "mockjs": "^1.1.0",
     "vue": "^2.6.14",
     "vue-router": "^3.5.3",

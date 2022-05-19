@@ -3,6 +3,7 @@ import App from './App.vue'
 
 import router from './router'
 
+import 'highlight.js/styles/vs.css'
 import '@/asset/css/index.css' // 自定义css
 
 Vue.config.productionTip = false
