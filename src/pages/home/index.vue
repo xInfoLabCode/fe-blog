@@ -31,7 +31,9 @@ export default {
   line-height: 60px;
   padding: 0 50px;
   border-bottom: 1px solid #d2d2d2;
+  font-size: 20px;
 }
+
 .component-list {
   padding: 50px;
 
@@ -39,13 +41,11 @@ export default {
     padding: 10px 0 20px;
 
     &-title {
-      display: block;
-      font-weight: 500;
       line-height: 40px;
+      font-size: 16px;
     }
     &-description {
-      font-size: 13px;
-      line-height: 20px;
+      line-height: 16px;
     }
   }
 }
