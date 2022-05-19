@@ -48,7 +48,7 @@ export default {
         url: `/#${item.path}`
       }))
 
-      this.list = codeList.concat(markdownList)
+      this.list = codeList.concat(markdownList).sort((a, b) => b?.date - a?.date)
     }
   }
 }

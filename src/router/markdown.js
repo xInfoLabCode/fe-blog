@@ -1,18 +1,20 @@
+import { formatDate } from '@/lib/util.js'
+
 const markdowns = require.context('@/blog/markdown', true, /\.md$/i)
 
 const routes = markdowns.keys().reduce((res, key) => {
   const component = markdowns(key).default
 
   const id = key.split('/').pop()
-  const name = id.replace(/\.md/i, '')
-  const pathKey = name.replace(/\s+/, '-')
+  const [name, date = new Date()] = id.replace(/\.md/i, '').split('.')
 
   const newRoute = {
     component,
-    path: `/markdown/${encodeURIComponent(pathKey)}`,
+    path: `/markdown/${encodeURIComponent(name)}`,
     meta: {
       id,
       name,
+      date: formatDate(date),
     }
   }
 
