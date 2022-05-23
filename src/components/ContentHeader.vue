@@ -23,6 +23,7 @@ export default {
   padding: 0 50px;
   text-align: left;
   font-size: 20px;
+  background-color: var(--color-white);
   border-bottom: 1px solid #d2d2d2;
   box-shadow: 0 1px 3px rgb(18 18 18 / 10%);
 

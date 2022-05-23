@@ -1,6 +1,6 @@
 <template>
   <div class="blog-item blog-code">
-    <a :href="blog.url" class="blog-item-title">{{ blog.id }} - {{ blog.name }}</a>
+    <a :href="blog.url" class="blog-item-title">{{ blog.name }} {{ blog.id }}</a>
     <div class="blog-item-description">{{ blog.description }}</div>
   </div>
 </template>
@@ -24,7 +24,6 @@ export default {
     font-size: 16px;
   }
   &-description {
-    line-height: 16px;
   }
 }
 </style>

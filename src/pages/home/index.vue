@@ -59,8 +59,13 @@ export default {
   display: flex;
   justify-content: center;
   .blog-list {
+    width: 80%;
     max-width: 1200px;
-    padding: 50px 0;
+    min-width: 800px;
+    padding: 50px;
+    margin: 20px 0 40px;
+    background-color: var(--color-white);
+    border-radius: var(--border-radius);
   }
 }
 </style>

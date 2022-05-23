@@ -33,13 +33,22 @@ export default {
     display: flex;
     .left-view,
     .right-desc {
-      height: calc(100vh - 60px);
+      min-height: calc(100vh - 100px);
       width: 50%;
       padding: 40px;
       overflow: auto;
+      margin: 20px;
+      background: #fff;
+      border-radius: 8px;
     }
     .left-view {
-      border-right: 1px solid #99999940;
+      margin-right: 10px;
+    }
+    .right-desc {
+      margin-left: 10px;
+      /deep/ body {
+        background-color: var(--color-white) !important;
+      }
     }
   }
 }

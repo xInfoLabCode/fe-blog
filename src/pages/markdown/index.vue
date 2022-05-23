@@ -24,9 +24,18 @@ export default {
   .body  {
     display: flex;
     justify-content: center;
-    padding: 50px 0 100px;
+    margin: 20px 0 40px;
+
     .content {
+      width: 80%;
       max-width: 1200px;
+      min-width: 800px;
+      padding: 50px;
+      border-radius: var(--border-radius);
+      background-color: var(--color-white);
+      /deep/ body {
+        background-color: inherit;
+      }
     }
   }
 }

@@ -1,8 +1,13 @@
 :root {
   --theme-color: rgb(0, 102, 255);
   --theme-color-dark: #06f;
+  --bg-color: #f2f2f2;
 
-  --font-size: 16px;
-  --font-size-s: 13px;
+  --color-white: #fff;
+
+  --font-size: 14px;
+  --font-size-s: 12px;
   --font-size-l: 20px;
+
+  --border-radius: 8px;
 }

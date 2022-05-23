@@ -15,6 +15,6 @@ export default {
   font-size: 20px;
   border-bottom: 1px solid #d2d2d2;
   box-shadow: 0 1px 3px rgb(18 18 18 / 10%);
-  color: var(--theme-color);
+  background-color: var(--color-white);
 }
 </style>
