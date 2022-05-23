@@ -1,6 +1,9 @@
 {
   "name": "fe100",
-  "version": "0.1.1",
+  "version": "0.2.0",
+  "title": "100个经典前端设计案例",
+  "github": "https://github.com/brandom1225/fe100",
+  "release": "http://fe100.xinfolab.com/",
   "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",

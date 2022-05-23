@@ -1,13 +1,20 @@
 <template>
   <div id="app">
-    <a class="fork-me" href="https://github.com/brandom1225/fe100"></a>
+    <a class="fork-me" :href="github" target="_blank"></a>
     <router-view />
   </div>
 </template>
 
 <script>
+import config from '@/../package.json'
+
 export default {
-  name: 'App'
+  name: 'App',
+  data() {
+    return {
+      github: config.github
+    }
+  }
 }
 </script>
 

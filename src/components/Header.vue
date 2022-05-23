@@ -1,9 +1,19 @@
 <template>
-  <div class="header">100个经典前端设计案例</div>
+  <div class="header">
+    {{title}} <span class="version">{{version}}</span>
+  </div>
 </template>
 
 <script>
+import config from '@/../package.json'
+
 export default {
+  data() {
+    return {
+      title: config.title,
+      version: config.version
+    }
+  }
 }
 </script>
 
@@ -16,5 +26,8 @@ export default {
   border-bottom: 1px solid #d2d2d2;
   box-shadow: 0 1px 3px rgb(18 18 18 / 10%);
   background-color: var(--color-white);
+  .version {
+    font-size: var(--font-size-s)
+  }
 }
 </style>
