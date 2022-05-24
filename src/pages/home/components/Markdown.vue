@@ -1,7 +1,7 @@
 <template>
-  <div class="blog-item blog-markdown">
-    <a :href="blog.url" class="blog-item-title">{{ blog.name }}</a>
-  </div>
+  <a class="blog-item blog-markdown" :href="blog.url" target="_blank">
+    <span class="blog-item-title">{{ blog.name }}</span>
+  </a>
 </template>
 
 <script>
@@ -14,16 +14,3 @@ export default {
   }
 }
 </script>
-
-<style scoped lang="less">
-.blog-item {
-  padding: 10px 0 20px;
-  &-title {
-    line-height: 40px;
-    font-size: 16px;
-  }
-  &-description {
-    line-height: 16px;
-  }
-}
-</style>

@@ -1,6 +1,7 @@
 import { formatDate } from '@/lib/util.js'
 
 const markdowns = require.context('@/blog/markdown', true, /\.md$/i)
+const type = 'markdown'
 
 const routes = markdowns.keys().reduce((res, key) => {
   const component = markdowns(key).default
@@ -14,6 +15,7 @@ const routes = markdowns.keys().reduce((res, key) => {
     meta: {
       id,
       name,
+      type,
       date: formatDate(date),
     }
   }

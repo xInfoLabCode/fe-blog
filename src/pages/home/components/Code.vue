@@ -1,8 +1,8 @@
 <template>
-  <div class="blog-item blog-code">
-    <a :href="blog.url" class="blog-item-title">{{ blog.name }} {{ blog.id }}</a>
+  <a class="blog-item blog-code" :href="blog.url">
+    <div class="blog-item-title">{{ blog.name }} {{ blog.id }}</div>
     <div class="blog-item-description">{{ blog.description }}</div>
-  </div>
+  </a>
 </template>
 
 <script>
@@ -15,15 +15,3 @@ export default {
   }
 }
 </script>
-
-<style scoped lang="less">
-.blog-item {
-  padding: 10px 0 20px;
-  &-title {
-    line-height: 40px;
-    font-size: 16px;
-  }
-  &-description {
-  }
-}
-</style>

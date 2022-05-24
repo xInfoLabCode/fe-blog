@@ -1,6 +1,7 @@
 import { formatDate } from '@/lib/util.js'
 
 const codes = require.context('@/blog/code', true, /demo\.vue$/i)
+const type = 'code'
 
 const routes = codes.keys().reduce((res, key) => {
   const keyArr = key.split('/')
@@ -16,6 +17,7 @@ const routes = codes.keys().reduce((res, key) => {
       component,
       meta: {
         id: componentName,
+        type,
         readme: () => import(`@/blog/code/${componentName}/readme.md`),
         ...config
       }
