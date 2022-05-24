@@ -1,12 +1,19 @@
 <template>
   <div class="content-header">
-    <a href="/">首页</a>
+    <a href="/">{{title}}</a>
     <div class="blog-name">{{ blogName }}</div>
   </div>
 </template>
 
 <script>
+import { getWebsiteConfig } from '@/lib/util'
+
 export default {
+  data() {
+    return {
+      title: getWebsiteConfig().title
+    }
+  },
   computed: {
     blogName() {
       return this.$route?.meta?.name
@@ -26,10 +33,6 @@ export default {
   background-color: var(--color-white);
   border-bottom: 1px solid #d2d2d2;
   box-shadow: 0 1px 3px rgb(18 18 18 / 10%);
-
-  a {
-    color: var(--theme-color);
-  }
 
   .blog-name {
     margin-left: 20px;

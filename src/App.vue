@@ -1,18 +1,53 @@
 <template>
   <div id="app">
-    <a class="fork-me" :href="github" target="_blank"></a>
+    <a class="fork-me" :href="config.github" target="_blank"></a>
     <router-view />
   </div>
 </template>
 
 <script>
-import config from '@/../package.json'
+import { getWebsiteConfig } from '@/lib/util'
 
 export default {
   name: 'App',
   data() {
     return {
-      github: config.github
+      config: getWebsiteConfig(),
+    }
+  },
+  watch: {
+    $route: {
+      handler() {
+        this.updateMetaInfo()
+      }
+    }
+  },
+  methods: {
+    updateMetaInfo() {
+      const { meta } = this.$route
+
+      this.setTitle(meta.name)
+      this.setDescription(meta.description)
+      this.setKeywords(meta.keywords)
+    },
+    setTitle(title = '') {
+      let pageTitle = ''
+
+      if (!title) {
+        pageTitle = `${this.config.title} - ${this.config.keywords.join(',')}`
+      } else {
+        pageTitle = `${title} - ${this.config.title}`
+      }
+
+      document.querySelector('head>title').innerHTML = pageTitle
+    },
+    setDescription(desc = '') {
+      const pageDescription = desc || this.config.description
+      document.querySelector('meta[name="description"]')?.setAttribute('content', pageDescription)
+    },
+    setKeywords(keywords) {
+      const pageKeywords = (keywords || this.config.keywords).join(',')
+      document.querySelector('meta[name="keywords"]')?.setAttribute('content', pageKeywords)
     }
   }
 }

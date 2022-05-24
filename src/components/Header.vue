@@ -5,10 +5,12 @@
 </template>
 
 <script>
-import config from '@/../package.json'
+import { getWebsiteConfig } from '@/lib/util'
 
 export default {
   data() {
+    const config = getWebsiteConfig()
+
     return {
       title: config.title,
       version: config.version

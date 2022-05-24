@@ -1,10 +1,12 @@
 {
-  "name": "fe100",
-  "version": "0.2.0",
-  "title": "100个经典前端设计案例",
-  "github": "https://github.com/brandom1225/fe100",
-  "release": "http://fe100.xinfolab.com/",
+  "name": "fe-blog",
+  "version": "0.2.1",
+  "title": "xInfoLab",
+  "github": "https://github.com/randomfe/fe-blog",
+  "website": "http://blog.xinfolab.com/",
   "license": "MIT",
+  "keywords": ["vue", "frontend", "blog"],
+  "description": "基于vue和markdown实现的博客项目",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",

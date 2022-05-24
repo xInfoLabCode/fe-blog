@@ -1,3 +1,10 @@
+import config from '@/../package.json'
+
+// 获取全站配置信息
+export function getWebsiteConfig() {
+  return config
+}
+
 // 格式化时间
 export function formatDate(val, defaultVal = '') {
   let date = val
