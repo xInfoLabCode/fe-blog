@@ -1,6 +1,6 @@
 import { formatDate } from '@/lib/util.js'
 
-const codes = require.context('@/blog/code', true, /index\.vue$/i)
+const codes = require.context('@/blog/code', true, /demo\.vue$/i)
 
 const routes = codes.keys().reduce((res, key) => {
   const keyArr = key.split('/')
