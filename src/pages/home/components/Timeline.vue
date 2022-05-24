@@ -36,7 +36,6 @@ export default {
 
     .blog-row {
       display: flex;
-      width: calc(50% - 50px);
       width: 100%;
       margin-bottom: 20px;
 
@@ -46,13 +45,22 @@ export default {
 
       &.markdown {
         justify-content: flex-end;
+
+        /deep/ .blog-item-title {
+          &::after {
+            right: auto;
+            left: -56px;
+          }
+        }
       }
 
       .blog-item {
+        position: relative;
         padding: 10px 20px 20px;
         width: calc(50% - 50px);
         background-color: #eee;
         border-radius: var(--border-radius);
+        border: 1px solid #eee;
         transition: box-shadow .3s ease;
 
         &:hover {
@@ -61,8 +69,20 @@ export default {
 
         /deep/ .blog-item-title {
           font-size: 18px;
-          display: inline-block;
           padding: 10px 0;
+
+          &:after {
+            content: '';
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 5px;
+            background-color: #aaa;
+            position: absolute;
+            right: -56px;
+            top: 25px;
+            z-index: 10;
+          }
         }
 
         /deep/ .blog-item-description {

@@ -1,6 +1,6 @@
 <template>
   <a class="blog-item blog-markdown" :href="blog.url" target="_blank">
-    <span class="blog-item-title">{{ blog.name }}</span>
+    <div class="blog-item-title">{{ blog.name }}</div>
   </a>
 </template>
 
