@@ -49,13 +49,16 @@ export default {
 .content {
   display: flex;
   justify-content: center;
+  align-items: flex-start;
+  min-height: 1200px;
+
   .timeline-area {
     width: 80%;
     max-width: 1200px;
     min-width: 800px;
     padding: 50px;
     margin: 20px 0 40px;
-    background-color: var(--color-white);
+    background-color: white;
     border-radius: var(--border-radius);
   }
 }

@@ -55,13 +55,14 @@ export default {
 
 <style scoped>
 .fork-me {
+  position: fixed;
   display: block;
   width: 138px;
   height: 138px;
-  position: absolute;
   top: 0;
   right: 0;
   transform: rotate(90deg);
   background: transparent url(./asset/img/fork-sprite.png) 0 0 no-repeat;
+  z-index: 100;
 }
 </style>

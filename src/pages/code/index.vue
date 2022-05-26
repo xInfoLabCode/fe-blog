@@ -46,7 +46,7 @@ export default {
     .right-desc {
       margin-left: 10px;
       /deep/ body {
-        background-color: var(--color-white) !important;
+        background-color: white !important;
       }
     }
   }
