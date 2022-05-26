@@ -59,7 +59,7 @@ export default {
     .blog-row {
       display: flex;
       width: 100%;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
 
       &:last-child {
         margin-bottom: 0;
@@ -78,15 +78,25 @@ export default {
 
       .blog-item {
         position: relative;
-        padding: 10px 20px 20px;
         width: calc(50% - 50px);
+        min-height: 100px;
+        padding: 10px 20px 20px;
         background-color: #eee;
         border-radius: var(--border-radius);
-        border-bottom: 2px solid #ccc;
+        border: 1px solid #eee;
+        border-bottom: 3px solid #ccc;
+        transition: all 1s ease;
 
         &:hover {
-          /deep/ .blog-item-title:after {
-            background-color: var(--font-color-dark);
+          color: var(--font-color-dark);
+          background-color: #ddd;
+          border-bottom: 3px solid #aaa;
+          /deep/ .blog-item-title {
+            &:after {
+              height: 100%;
+              top: 0;
+              background-color: var(--theme-color);
+            }
           }
         }
 
@@ -95,7 +105,6 @@ export default {
           padding: 10px 0;
 
           &:after {
-            .fadeIn;
             content: '';
             display: inline-block;
             width: 10px;
@@ -106,7 +115,8 @@ export default {
             right: -56px;
             top: 25px;
             z-index: 10;
-            transition: background-color 1s ease;
+            transition: all 1s ease;
+            animation: fadeIn 2s ease alternate both;
           }
         }
 
@@ -118,7 +128,6 @@ export default {
   }
 
   .time-col {
-    .fadeIn;
     height: calc(100% - 100px);
     width: 10px;
     position: absolute;
@@ -127,10 +136,6 @@ export default {
     background-color: #eee;
     border-radius: var(--border-radius);
   }
-}
-
-.fadeIn {
-  animation: fadeIn 1.5s ease alternate both;
 }
 
 @keyframes fadeIn {
