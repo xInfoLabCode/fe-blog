@@ -1,7 +1,7 @@
 <template>
   <div class="timeline">
     <div class="blog-list">
-      <div v-for="item in list" :key="item.url" class="blog-row" :class="item.type">
+      <div v-for="item in list" :key="item.url" :class="getClass(item)">
         <Markdown v-if="item.type==='markdown'" :blog="item" />
         <Code v-else :blog="item" />
       </div>
@@ -21,6 +21,28 @@ export default {
   components: {
     Code,
     Markdown
+  },
+  mounted() {
+    this.init()
+  },
+  methods: {
+    init() {
+      this.initAnimation()
+    },
+    initAnimation() {
+      this.$nextTick(() => {
+        const wow = new this.$wow.WOW()
+        wow.init()
+      })
+    },
+    getClass(item) {
+      return [
+        'blog-row',
+        'wow',
+        item.type,
+        item.type === 'code' ? 'fadeInLeft' : 'fadeInRight'
+      ]
+    }
   }
 }
 </script>
@@ -60,11 +82,12 @@ export default {
         width: calc(50% - 50px);
         background-color: #eee;
         border-radius: var(--border-radius);
-        border: 1px solid #eee;
-        transition: box-shadow .3s ease;
+        border-bottom: 2px solid #ccc;
 
         &:hover {
-          box-shadow: 10px 10px 5px #eee;
+          /deep/ .blog-item-title:after {
+            background-color: var(--font-color-dark);
+          }
         }
 
         /deep/ .blog-item-title {
@@ -72,6 +95,7 @@ export default {
           padding: 10px 0;
 
           &:after {
+            .fadeIn;
             content: '';
             display: inline-block;
             width: 10px;
@@ -82,6 +106,7 @@ export default {
             right: -56px;
             top: 25px;
             z-index: 10;
+            transition: background-color 1s ease;
           }
         }
 
@@ -93,6 +118,7 @@ export default {
   }
 
   .time-col {
+    .fadeIn;
     height: calc(100% - 100px);
     width: 10px;
     position: absolute;
@@ -100,6 +126,22 @@ export default {
     left: calc(50% - 5px);
     background-color: #eee;
     border-radius: var(--border-radius);
+  }
+}
+
+.fadeIn {
+  animation: fadeIn 1.5s ease alternate both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
   }
 }
 </style>

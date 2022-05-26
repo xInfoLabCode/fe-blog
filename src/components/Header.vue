@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    {{title}} <span class="version">{{version}}</span>
+    <img class="logo" src="/logo.svg" />
   </div>
 </template>
 
@@ -21,6 +21,8 @@ export default {
 
 <style lang="less" scoped>
 .header {
+  display: flex;
+  align-items: center;
   height: 60px;
   line-height: 60px;
   padding: 0 50px;
@@ -28,6 +30,9 @@ export default {
   border-bottom: 1px solid #d2d2d2;
   box-shadow: 0 1px 3px rgb(18 18 18 / 10%);
   background-color: var(--color-white);
+  .logo {
+    width: 140px;
+  }
   .version {
     font-size: var(--font-size-s)
   }

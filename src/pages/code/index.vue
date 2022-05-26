@@ -5,7 +5,7 @@
       <div class="left-view">
         <router-view />
       </div>
-      <div class="right-desc">
+      <div class="right-desc markdown-area">
         <component :is="readme" />
       </div>
     </div>
@@ -38,7 +38,6 @@ export default {
       padding: 40px;
       overflow: auto;
       margin: 20px;
-      background: #fff;
       border-radius: 8px;
     }
     .left-view {

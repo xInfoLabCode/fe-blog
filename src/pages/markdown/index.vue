@@ -2,7 +2,7 @@
   <div class="markdown-page">
     <ContentHeader />
     <div class="body">
-      <div class="content">
+      <div class="content markdown-area">
         <router-view />
       </div>
     </div>
@@ -31,11 +31,6 @@ export default {
       max-width: 1200px;
       min-width: 800px;
       padding: 50px;
-      border-radius: var(--border-radius);
-      background-color: var(--color-white);
-      /deep/ body {
-        background-color: inherit;
-      }
     }
   }
 }

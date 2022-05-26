@@ -1,6 +1,6 @@
 <template>
   <div class="content-header">
-    <a href="/">{{title}}</a>
+    <a href="/"><img class="logo" src="/logo.svg" /></a>
     <div class="blog-name">{{ blogName }}</div>
   </div>
 </template>
@@ -25,6 +25,7 @@ export default {
 <style lang="less" scoped>
 .content-header {
   display: flex;
+  align-items: center;
   height: 60px;
   line-height: 60px;
   padding: 0 50px;
@@ -33,9 +34,16 @@ export default {
   background-color: var(--color-white);
   border-bottom: 1px solid #d2d2d2;
   box-shadow: 0 1px 3px rgb(18 18 18 / 10%);
-
+  a {
+    display: block;
+    display: flex;
+    align-items: center;
+    .logo {
+      width: 140px;
+    }
+  }
   .blog-name {
-    margin-left: 20px;
+    margin-left: 40px;
   }
 }
 </style>
