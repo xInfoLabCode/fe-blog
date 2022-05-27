@@ -13,6 +13,7 @@
 
 <script>
 import { getWebsiteConfig } from '@/lib/util'
+const config = getWebsiteConfig()
 
 export default {
   name: 'Header',
@@ -20,12 +21,8 @@ export default {
     title: String
   },
   data() {
-    const config = getWebsiteConfig()
-
     return {
-      isFold: false,
-      title: config.title,
-      version: config.version
+      isFold: false
     }
   },
   mounted() {

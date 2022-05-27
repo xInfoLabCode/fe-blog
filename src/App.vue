@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <a class="fork-me" :href="config.github" target="_blank"></a>
+    <a class="fork-me" :href="config.github" target="_blank" alt="github">
+      {{ config.github }}
+    </a>
     <router-view />
   </div>
 </template>
@@ -64,5 +66,6 @@ export default {
   transform: rotate(90deg);
   background: transparent url(./asset/img/fork-sprite.png) 0 0 no-repeat;
   z-index: 1000;
+  color: transparent;
 }
 </style>
