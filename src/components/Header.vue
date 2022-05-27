@@ -1,6 +1,11 @@
 <template>
-  <div class="header" :class="isFold ? 'header-fold' : 'header-expand'">
-    <img class="logo" src="/logo.svg" />
+  <div class="header">
+    <div v-show="isFold" class="header-fold">
+      <img class="logo" src="/logo.svg" alt="logo" />
+    </div>
+    <div class="header-expand">
+      <img class="logo" src="/logo.svg" alt="logo" />
+    </div>
   </div>
 </template>
 
@@ -32,13 +37,8 @@ export default {
     },
     scrollHandler() {
       const [minHeight, maxHeight] = [60, 400]
-      if (!this.isFold) {
-        if (window.scrollY > maxHeight - minHeight) {
-          this.isFold = true
 
-          this.unInit()
-        }
-      }
+      this.isFold = window.scrollY > maxHeight - minHeight
     }
   }
 }
@@ -46,28 +46,32 @@ export default {
 
 <style lang="less" scoped>
 .header {
-  display: flex;
-  align-items: center;
   font-size: 20px;
-  border-bottom: 1px solid #d2d2d2;
-  box-shadow: 0 1px 3px rgb(18 18 18 / 10%);
-  background-color: white;
 
-  &.header-fold {
-    position: sticky;
-    z-index: 10;
+  &-fold,
+  &-expand {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #d2d2d2;
+    box-shadow: 0 1px 3px rgb(18 18 18 / 10%);
+    background-color: white;
+  }
+
+  &-fold {
+    position: fixed;
     top: 0;
     width: 100%;
     height: 60px;
     line-height: 60px;
     padding: 0 50px;
+    z-index: 100;
 
     .logo {
       width: 140px;
     }
   }
 
-  &.header-expand {
+  &-expand {
     height: 400px;
     justify-content: center;
 

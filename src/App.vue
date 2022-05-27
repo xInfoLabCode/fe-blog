@@ -63,6 +63,6 @@ export default {
   right: 0;
   transform: rotate(90deg);
   background: transparent url(./asset/img/fork-sprite.png) 0 0 no-repeat;
-  z-index: 100;
+  z-index: 1000;
 }
 </style>
