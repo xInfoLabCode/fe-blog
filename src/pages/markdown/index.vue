@@ -1,6 +1,6 @@
 <template>
   <div class="markdown-page">
-    <ContentHeader />
+    <Header :title="title" />
     <div class="body">
       <div class="content markdown-area">
         <router-view />
@@ -10,11 +10,11 @@
 </template>
 
 <script>
-import ContentHeader from '@/components/ContentHeader.vue'
-
 export default {
-  components: {
-    ContentHeader
+  computed: {
+    title() {
+      return this.$route?.meta?.name
+    }
   }
 }
 </script>

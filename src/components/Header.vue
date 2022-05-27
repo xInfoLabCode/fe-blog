@@ -1,10 +1,12 @@
 <template>
   <div class="header">
     <div v-show="isFold" class="header-fold">
-      <img class="logo" src="/logo.svg" alt="logo" />
+      <a href="/" class="header-logo" alt="logo"></a>
+      <div class="header-title">{{ title }}</div>
     </div>
     <div class="header-expand">
-      <img class="logo" src="/logo.svg" alt="logo" />
+      <div v-if="!title" class="header-logo"></div>
+      <div v-else class="header-title">{{ title }}</div>
     </div>
   </div>
 </template>
@@ -13,6 +15,10 @@
 import { getWebsiteConfig } from '@/lib/util'
 
 export default {
+  name: 'Header',
+  props: {
+    title: String
+  },
   data() {
     const config = getWebsiteConfig()
 
@@ -46,13 +52,13 @@ export default {
 
 <style lang="less" scoped>
 .header {
-  font-size: 20px;
+  font-size: 25px;
 
   &-fold,
   &-expand {
     display: flex;
     align-items: center;
-    border-bottom: 1px solid #d2d2d2;
+    border-bottom: 1px solid #ccc;
     box-shadow: 0 1px 3px rgb(18 18 18 / 10%);
     background-color: white;
   }
@@ -66,8 +72,18 @@ export default {
     padding: 0 50px;
     z-index: 100;
 
-    .logo {
+    .header-logo {
+      display: inline-block;
       width: 140px;
+      height: 50px;
+      margin-right: 30px;
+      background-image: url('../asset/img/logo.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .header-title {
+      color: var(--font-color-dark);
     }
   }
 
@@ -75,8 +91,16 @@ export default {
     height: 400px;
     justify-content: center;
 
-    .logo {
+    .header-logo {
       width: 400px;
+      height: 200px;
+      background-image: url('../asset/img/logo.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .header-title {
+      font-size: 60px;
     }
   }
 }

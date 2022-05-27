@@ -1,6 +1,6 @@
 <template>
   <div class="code-page">
-    <ContentHeader />
+    <Header :title="title" />
     <div class="content">
       <div class="left-view">
         <router-view />
@@ -13,13 +13,11 @@
 </template>
 
 <script>
-import ContentHeader from '@/components/ContentHeader.vue'
-
 export default {
-  components: {
-    ContentHeader
-  },
   computed: {
+    title() {
+      return this.$route?.meta?.name
+    },
     readme() {
       return this.$route?.meta?.readme
     }
