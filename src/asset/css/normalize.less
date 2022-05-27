@@ -11,13 +11,15 @@ html, body {
   scroll-behavior: smooth;
   color: var(--font-color);
   background-color: var(--bg-color);
-}
 
-a {
-  color: var(--font-color);
-  text-decoration: none;
-}
-a:hover {
-  color: var(--font-color-dark);
-  transition: color .5s ease;
+  a {
+    color: var(--font-color);
+    text-decoration: none;
+    transition: all .3s ease;
+  
+    &:hover {
+      color: var(--theme-color);
+      font-weight: 500;
+    }
+  }
 }

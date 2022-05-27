@@ -6,6 +6,7 @@
         <router-view />
       </div>
     </div>
+    <Footer />
   </div>
 </template>
 

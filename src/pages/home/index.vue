@@ -1,9 +1,10 @@
 <template>
-  <div class="fe100">
+  <div class="home-page">
     <Header />
     <div class="content">
       <Timeline :list="list" class="timeline-area" />
     </div>
+    <Footer />
   </div>
 </template>
 
@@ -46,20 +47,22 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.content {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  min-height: 1200px;
+.home-page {
+  .content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
 
-  .timeline-area {
-    width: 80%;
-    max-width: 1200px;
-    min-width: 800px;
-    padding: 50px;
-    margin: 20px 0 40px;
-    background-color: white;
-    border-radius: var(--border-radius);
+    .timeline-area {
+      width: 80%;
+      max-width: 1200px;
+      min-width: 800px;
+      padding: 50px;
+      margin: 20px 0 40px;
+      background-color: white;
+      border-radius: var(--border-radius);
+    }
   }
 }
 </style>

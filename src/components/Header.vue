@@ -1,20 +1,20 @@
 <template>
   <div class="header">
     <div v-show="isFold" class="header-fold">
-      <a href="/" class="header-logo" alt="logo"></a>
-      <div class="header-title">{{ title }}</div>
+      <a href="/" class="header-fold-logo" alt="logo"></a>
+      <div class="header-fold-title">{{ title }}</div>
     </div>
     <div class="header-expand">
-      <div v-if="!title" class="header-logo"></div>
-      <div v-else class="header-title">{{ title }}</div>
+      <div v-if="!title" class="header-expand-logo"></div>
+      <template v-else>
+        <a href="/" class="header-expand-logo-icon" alt="logo"></a>
+        <div class="header-expand-title">{{ title }}</div>
+      </template>
     </div>
   </div>
 </template>
 
 <script>
-import { getWebsiteConfig } from '@/lib/util'
-const config = getWebsiteConfig()
-
 export default {
   name: 'Header',
   props: {
@@ -33,6 +33,8 @@ export default {
   },
   methods: {
     init() {
+      this.scrollHandler()
+
       window.addEventListener('scroll', this.scrollHandler)
     },
     unInit() {
@@ -57,7 +59,7 @@ export default {
     align-items: center;
     border-bottom: 1px solid #ccc;
     box-shadow: 0 1px 3px rgb(18 18 18 / 10%);
-    background-color: white;
+    background: var(--theme-color);
   }
 
   &-fold {
@@ -69,26 +71,28 @@ export default {
     padding: 0 50px;
     z-index: 100;
 
-    .header-logo {
-      display: inline-block;
-      width: 140px;
-      height: 50px;
-      margin-right: 30px;
-      background-image: url('../asset/img/logo.svg');
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-    }
-    .header-title {
+    &-title {
       color: var(--font-color-dark);
+      margin-left: 30px;
     }
+  }
+
+  .header-fold-logo {
+    display: inline-block;
+    width: 140px;
+    height: 50px;
+    background-image: url('../asset/img/logo.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 
   &-expand {
     height: 400px;
     justify-content: center;
+    position: relative;
 
-    .header-logo {
+    &-logo {
       width: 400px;
       height: 200px;
       background-image: url('../asset/img/logo.svg');
@@ -96,7 +100,13 @@ export default {
       background-repeat: no-repeat;
       background-position: center;
     }
-    .header-title {
+    &-logo-icon {
+      .header-fold-logo;
+      position: absolute;
+      left: 50px;
+      top: 5px;
+    }
+    &-title {
       font-size: 60px;
     }
   }

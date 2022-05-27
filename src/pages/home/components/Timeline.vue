@@ -81,16 +81,17 @@ export default {
         width: calc(50% - 50px);
         min-height: 100px;
         padding: 10px 20px 20px;
-        background-color: #eee;
+        color: var(--font-color);
+        background-color: #f2f2f2;
         border-radius: var(--border-radius);
         border: 1px solid #eee;
         border-bottom: 3px solid #ccc;
         transition: all 1s ease;
 
         &:hover {
-          color: var(--font-color-dark);
-          background-color: #ddd;
-          border-bottom: 3px solid #aaa;
+          color: var(--theme-color);
+          background-color: #eee;
+          border-bottom: 3px solid var(--theme-color);
           /deep/ .blog-item-title {
             &:after {
               height: 100%;

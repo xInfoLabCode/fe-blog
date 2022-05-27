@@ -9,6 +9,7 @@
         <component :is="readme" />
       </div>
     </div>
+    <Footer />
   </div>
 </template>
 
