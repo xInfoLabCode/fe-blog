@@ -107,7 +107,8 @@ export default {
 }
 .scroll-container {
   position: relative;
-  width: 500px;
+  width: 100%;
+  max-width: 500px;
   border: 1px solid #0091ff76;
   border-radius: 8px;
   box-shadow: 10px 10px 20px #0091ff76;

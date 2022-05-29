@@ -1,3 +1,5 @@
+@import "./variable.less";
+
 .markdown-area {
   background-color: #fff;
   html, body {
@@ -25,10 +27,20 @@
       padding: 20px;
       border-radius: 8px;
       line-height: 1.5em;
+      word-break: break-all;
 
       code {
         color: white;
         white-space: pre-wrap;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: @min-width) {
+  .markdown-area {
+    html, body {
+      pre {
       }
     }
   }

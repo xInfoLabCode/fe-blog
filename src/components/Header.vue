@@ -50,6 +50,8 @@ export default {
 </script>
 
 <style lang="less" scoped>
+@import "@/asset/css/variable.less";
+
 .header {
   font-size: 25px;
 
@@ -72,8 +74,12 @@ export default {
     z-index: 100;
 
     &-title {
+      flex: 1;
       color: var(--font-color-dark);
       margin-left: 30px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
   }
 
@@ -108,7 +114,20 @@ export default {
     }
     &-title {
       font-size: 60px;
+      padding: 10px;
     }
+  }
+}
+
+@media screen and (max-width: @min-width) {
+  .header-expand-logo-icon {
+    left: 10px !important;
+  }
+  .header-fold {
+    padding: 0 10px !important;
+  }
+  .header-fold-title {
+    margin-left: 10px !important;
   }
 }
 </style>

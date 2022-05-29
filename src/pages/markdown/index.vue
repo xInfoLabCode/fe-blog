@@ -21,6 +21,8 @@ export default {
 </script>
 
 <style lang="less" scoped>
+@import "@/asset/css/variable.less";
+
 .markdown-page {
   .body  {
     display: flex;
@@ -29,9 +31,23 @@ export default {
 
     .content {
       width: 80%;
-      max-width: 1200px;
-      min-width: 800px;
+      max-width: @max-width;
+      min-width: @min-width;
       padding: 50px;
+    }
+  }
+}
+
+@media screen and (max-width: @min-width) {
+  .markdown-page {
+    .body  {
+      justify-content: flex-start;
+      .content {
+        width: 100%;
+        max-width: none;
+        min-width: auto;
+        padding: 20px;
+      }
     }
   }
 }

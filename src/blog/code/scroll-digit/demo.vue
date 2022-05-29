@@ -75,7 +75,6 @@ export default {
 
 <style>
 .main {
-  margin: 0 100px;
   display: flex;
   flex-direction: column;
 }

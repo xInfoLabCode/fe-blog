@@ -10,8 +10,10 @@
     "frontend",
     "blog"
   ],
-  "description": "基于vue和markdown实现的博客项目",
+  "description": "基于vue和markdown的博客项目",
+  "slogon": "To Explore The Virtual",
   "scripts": {
+    "dev": "npm run serve",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"

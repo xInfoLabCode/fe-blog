@@ -1,7 +1,7 @@
 <template>
   <div class="timeline">
     <div class="blog-list">
-      <div v-for="item in list" :key="item.url" :class="getClass(item)">
+      <div v-for="item in list" :key="item.url" :class="getClass(item)" class="blog-row wow">
         <Markdown v-if="item.type==='markdown'" :blog="item" />
         <Code v-else :blog="item" />
       </div>
@@ -37,8 +37,6 @@ export default {
     },
     getClass(item) {
       return [
-        'blog-row',
-        'wow',
         item.type,
         item.type === 'code' ? 'fadeInLeft' : 'fadeInRight'
       ]
@@ -48,6 +46,8 @@ export default {
 </script>
 
 <style scoped lang="less">
+@import "@/asset/css/variable.less";
+
 .timeline {
   display: flex;
   align-items: stretch;
@@ -136,6 +136,25 @@ export default {
     left: calc(50% - 5px);
     background-color: #eee;
     border-radius: var(--border-radius);
+  }
+}
+
+@media screen and (max-width: @min-width) {
+  .timeline {
+    .blog-list {
+      .blog-row {
+        justify-content: flex-start;
+        /deep/ .blog-item {
+          width: 100%;
+          .blog-item-title::after {
+            display: none;
+          }
+        }
+      }
+    }
+    .time-col {
+      display: none;
+    }
   }
 }
 

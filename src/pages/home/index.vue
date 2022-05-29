@@ -47,6 +47,8 @@ export default {
 </script>
 
 <style lang="less" scoped>
+@import "@/asset/css/variable.less";
+
 .home-page {
   .content {
     display: flex;
@@ -56,12 +58,25 @@ export default {
 
     .timeline-area {
       width: 80%;
-      max-width: 1200px;
-      min-width: 800px;
+      max-width: @max-width;
+      min-width: @min-width;
       padding: 50px;
       margin: 20px 0 40px;
       background-color: white;
       border-radius: var(--border-radius);
+    }
+  }
+
+  @media screen and (max-width: @min-width) {
+    .content {
+      display: block;
+      min-height: auto;
+      .timeline-area {
+        width: 100%;
+        max-width: @min-width;
+        min-width: auto;
+        padding: 10px;
+      }
     }
   }
 }
