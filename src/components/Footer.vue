@@ -2,7 +2,7 @@
   <div class="footer">
     <div class="footer-content">
       <div class="website-anonce">
-        {{ slogon }}
+        {{ slogan }}
       </div>
       <div class="friend-links">
         <a v-for="link in friendLinks" :key="link.url" :href="link.url" class="friend-link" target="_blank">
@@ -19,10 +19,10 @@ import { getWebsiteConfig } from '@/lib/util'
 export default {
   name: 'Footer',
   data() {
-    const { slogon } = getWebsiteConfig()
+    const { slogan } = getWebsiteConfig()
 
     return {
-      slogon,
+      slogan,
       friendLinks: [
         { text: 'RandomFE', url: 'https://github.com/RandomFE' },
         { text: 'Canvas Design', url: 'https://canvas-design.xinfolab.com/views/rotating-starry-sky.html' }

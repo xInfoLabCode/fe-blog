@@ -3,8 +3,10 @@ const { defineConfig } = require('@vue/cli-service')
 module.exports = defineConfig({
   transpileDependencies: true,
   lintOnSave: false,
+  productionSourceMap: false,
   chainWebpack(config){
-    config.module.rule('md')
+    config.module
+      .rule('md')
       .test(/\.md/)
       .use('vue-loader')
       .loader('vue-loader')
@@ -13,6 +15,6 @@ module.exports = defineConfig({
       .loader('vue-markdown-loader/lib/markdown-compiler')
       .options({
         raw: true
-      })
+      });
   }
 })

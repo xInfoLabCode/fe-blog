@@ -11,7 +11,7 @@
     "blog"
   ],
   "description": "基于vue和markdown的博客项目",
-  "slogon": "To Explore The Virtual",
+  "slogan": "To Explore The Virtual",
   "scripts": {
     "dev": "npm run serve",
     "serve": "vue-cli-service serve",
@@ -38,6 +38,7 @@
     "eslint-plugin-vue": "^8.0.3",
     "less": "^4.1.2",
     "less-loader": "^10.2.0",
+    "url-loader": "^4.1.1",
     "vue-markdown-loader": "^2.4.1",
     "vue-template-compiler": "^2.6.14"
   },
@@ -58,6 +59,7 @@
   "browserslist": [
     "> 1%",
     "last 2 versions",
-    "not dead"
+    "not dead",
+    "not ie <= 11"
   ]
 }
