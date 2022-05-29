@@ -64,7 +64,7 @@ export default {
 @media screen and (max-width: @min-width) {
   .code-page {
     .content {
-      flex-direction: column-reverse;
+      flex-direction: column;
       min-height: 100vh;
       .left-view,
       .right-desc {

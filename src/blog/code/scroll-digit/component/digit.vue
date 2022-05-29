@@ -100,7 +100,7 @@ export default {
   height: 100%;
 }
 .scroll-list {
-  animation: scrollDigit .1s ease-out;
+  animation: scrollDigit .1s ease-out alternate;
   visibility: hidden;
 }
 .real-digit {

@@ -56,8 +56,8 @@ export default {
       fontSize: 26,
       reverse: 'false',
       duration: 0.2,
-      color: '#fff',
-      bgColor: '#0092ff',
+      color: '#000',
+      bgColor: 'transparent',
     }
   },
   methods: {
@@ -84,7 +84,7 @@ export default {
   font-size: 30px;
 }
 .demo-area {
-  height: 400px;
+  height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;

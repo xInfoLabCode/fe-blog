@@ -1,7 +1,5 @@
 <template>
-  <div>
-    Worker
-  </div>
+  <div>Worker</div>
 </template>
 
 <script>
@@ -11,7 +9,6 @@ import worker from 'vue-worker'
 Vue.use(worker)
 
 function test(a, b) {
-  console.log(111, a, b)
   return a + b
 }
 
