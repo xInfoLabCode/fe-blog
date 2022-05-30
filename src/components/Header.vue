@@ -75,22 +75,21 @@ export default {
 
     &-title {
       flex: 1;
-      color: var(--font-color-dark);
       margin-left: 30px;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
     }
-  }
 
-  .header-fold-logo {
-    display: inline-block;
-    width: 140px;
-    height: 50px;
-    background-image: url('../asset/img/logo.svg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+    &-logo {
+      display: inline-block;
+      width: 140px;
+      height: 50px;
+      background-image: url('../asset/img/logo.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
   }
 
   &-expand {
@@ -99,18 +98,25 @@ export default {
     position: relative;
 
     &-logo {
-      width: 400px;
+      width: 80%;
       height: 200px;
       background-image: url('../asset/img/logo.svg');
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
-    }
-    &-logo-icon {
-      .header-fold-logo;
-      position: absolute;
-      left: 50px;
-      top: 5px;
+
+      &-icon {
+        position: absolute;
+        left: 50px;
+        top: 5px;
+        display: inline-block;
+        width: 140px;
+        height: 50px;
+        background-image: url('../asset/img/logo.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
     }
     &-title {
       font-size: 60px;
@@ -120,14 +126,26 @@ export default {
 }
 
 @media screen and (max-width: @min-width) {
-  .header-expand-logo-icon {
-    left: 10px !important;
-  }
-  .header-fold {
-    padding: 0 10px !important;
-  }
-  .header-fold-title {
-    margin-left: 10px !important;
+  .header {
+    &-fold {
+      padding: 0 10px !important;
+    }
+    &-expand {
+      height: 300px;
+      &-title {
+        display: -webkit-box;
+        font-size: 48px;
+        margin-left: 10px !important;
+        max-height: 175px;
+        overflow: hidden;
+        word-break: break-all;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+      }
+      &-logo-icon {
+        left: 10px !important;
+      }
+    }
   }
 }
 </style>

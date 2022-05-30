@@ -1,14 +1,14 @@
 <template>
   <div class="footer">
     <div class="footer-content">
-      <div class="website-anonce">
-        {{ slogan }}
-      </div>
       <div class="friend-links">
         <a v-for="link in friendLinks" :key="link.url" :href="link.url" class="friend-link" target="_blank">
           {{ link.text }}
         </a> 
       </div>
+      <a href="/" class="website-anonce">
+        {{ slogan }}  &copy;2022 {{ title }}
+      </a>
     </div>
   </div>
 </template>
@@ -19,9 +19,10 @@ import { getWebsiteConfig } from '@/lib/util'
 export default {
   name: 'Footer',
   data() {
-    const { slogan } = getWebsiteConfig()
+    const { title, slogan } = getWebsiteConfig()
 
     return {
+      title,
       slogan,
       friendLinks: [
         { text: 'RandomFE', url: 'https://github.com/RandomFE' },
@@ -36,7 +37,7 @@ export default {
 @import "@/asset/css/variable.less";
 
 @footer-color: var(--font-color);
-@margin: 30px;
+@margin: 15px;
 
 .footer {
   display: flex;
@@ -45,7 +46,6 @@ export default {
   margin-top: 50px;
   color: @footer-color;
   font-size: .9em;
-  opacity: .9;
 
   &-content {
     display: flex;
@@ -58,7 +58,8 @@ export default {
     border-top: 1px solid #eee;
 
     .website-anonce {
-      margin-right: @margin;
+      display: inline-block;
+      margin-left: @margin;
     }
 
     .friend-links {
@@ -67,7 +68,10 @@ export default {
 
       a {
         color: @footer-color;
-        margin-right: @margin;
+
+        & + a {
+          margin-left: @margin;
+        }
       }
     }
   }
@@ -82,8 +86,12 @@ export default {
       max-width: none;
       flex-direction: column;
 
+      & > div {
+        height: 20px;
+      }
+
       .website-anonce {
-        height: 28px;
+        margin-left: 0;
       }
     }
   }
