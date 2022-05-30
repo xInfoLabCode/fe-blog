@@ -11,7 +11,7 @@
     "blog"
   ],
   "description": "基于vue和markdown的博客项目",
-  "slogon": "To Explore The Virtual",
+  "slogan": "To Explore The Virtual",
   "scripts": {
     "dev": "npm run serve",
     "serve": "vue-cli-service serve",
