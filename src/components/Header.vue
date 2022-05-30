@@ -79,13 +79,14 @@ export default {
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
+      color: white;
     }
 
     &-logo {
       display: inline-block;
       width: 140px;
       height: 50px;
-      background-image: url('../asset/img/logo.svg');
+      background-image: var(--logo-white);
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
@@ -97,10 +98,16 @@ export default {
     justify-content: center;
     position: relative;
 
+    &-title {
+      font-size: 60px;
+      padding: 10px;
+      color: white;
+    }
+
     &-logo {
       width: 80%;
       height: 200px;
-      background-image: url('../asset/img/logo.svg');
+      background-image: var(--logo-white);
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
@@ -112,15 +119,11 @@ export default {
         display: inline-block;
         width: 140px;
         height: 50px;
-        background-image: url('../asset/img/logo.svg');
+        background-image: var(--logo-white);
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
       }
-    }
-    &-title {
-      font-size: 60px;
-      padding: 10px;
     }
   }
 }

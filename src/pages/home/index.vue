@@ -75,7 +75,7 @@ export default {
         width: 100%;
         max-width: @min-width;
         min-width: auto;
-        padding: 10px;
+        padding: var(--padding-h5);
       }
     }
   }

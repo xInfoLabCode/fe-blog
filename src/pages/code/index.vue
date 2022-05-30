@@ -72,7 +72,7 @@ export default {
         max-width: none;
         min-width: auto;
         min-height: auto;
-        padding: 20px;
+        padding: var(--padding-h5);
         margin: 0;
       }
     }

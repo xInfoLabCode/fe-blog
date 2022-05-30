@@ -46,7 +46,7 @@ export default {
         width: 100%;
         max-width: none;
         min-width: auto;
-        padding: 20px;
+        padding: var(--padding-h5);
       }
     }
   }

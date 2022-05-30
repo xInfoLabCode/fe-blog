@@ -1,10 +1,17 @@
+
+@min-width: 800px;
+@max-width: 1200px;
+
+@logo: url(../img/logo.svg);
+@logo-white: url(../img/logo-white.svg);
+
+
+// css variable
 :root {
   --font-family: "SF Pro Display",Roboto,Noto,Arial,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
 
-  --orange: #ff8300;
-  --blue: rgb(0, 102, 255);
-  --theme-color: #ff8300;
-  --bg-color: #fdfdfd;
+  --theme-color: #3fb0ac;
+  --code-bg-color: #173143;
 
   --font-color: rgba(0, 0, 0, .65);
   --font-color-dark: rgba(0, 0, 0, .8);
@@ -16,9 +23,11 @@
 
   --border-radius: 8px;
 
+  --padding-h5: 10px;
+
   --min-width: @min-width;
   --max-width: @max-width;
-}
 
-@min-width: 800px;
-@max-width: 1200px;
+  --logo: @logo;
+  --logo-white: @logo-white;
+}
