@@ -1,12 +1,12 @@
 <template>
   <div class="timeline">
+    <div class="time-col"></div>
     <div class="blog-list">
-      <div v-for="item in list" :key="item.url" :class="getClass(item)" class="blog-row wow">
+      <div v-for="item in list" :key="item.url" :class="item.type" class="blog-row wow fadeInLeft">
         <Markdown v-if="item.type==='markdown'" :blog="item" />
         <Code v-else :blog="item" />
       </div>
     </div>
-    <div class="time-col"></div>
   </div>
 </template>
 
@@ -34,12 +34,6 @@ export default {
         const wow = new this.$wow.WOW()
         wow.init()
       })
-    },
-    getClass(item) {
-      return [
-        item.type,
-        item.type === 'code' ? 'fadeInLeft' : 'fadeInRight'
-      ]
     }
   }
 }
@@ -52,9 +46,16 @@ export default {
   display: flex;
   align-items: stretch;
   position: relative;
+  
+  .time-col {
+    width: 15px;
+    margin-right: 20px;
+    background-color: #eee;
+    border-radius: var(--border-radius);
+  }
 
   .blog-list {
-    width: 100%;
+    flex: 1;
 
     .blog-row {
       display: flex;
@@ -77,8 +78,9 @@ export default {
       }
 
       .blog-item {
+        display: block;
         position: relative;
-        width: calc(50% - 50px);
+        width: 100%;
         min-height: 100px;
         padding: 10px 20px 20px;
         color: var(--font-color);
@@ -92,8 +94,9 @@ export default {
           color: var(--theme-color);
           background-color: #eee;
           border-bottom: 3px solid var(--theme-color);
+
           /deep/ .blog-item-title {
-            &:after {
+            &::after {
               height: 100%;
               top: 0;
               background-color: var(--theme-color);
@@ -110,11 +113,11 @@ export default {
             display: inline-block;
             width: 10px;
             height: 10px;
-            border-radius: 5px;
-            background-color: #aaa;
+            border-radius: 6px;
+            background-color: var(--theme-color);
             position: absolute;
-            right: -56px;
             top: 25px;
+            left: -34px;
             z-index: 10;
             transition: all 1s ease;
             animation: fadeIn 2s ease alternate both;
@@ -126,16 +129,6 @@ export default {
         }
       }
     }
-  }
-
-  .time-col {
-    height: calc(100% - 100px);
-    width: 10px;
-    position: absolute;
-    top: 50px;
-    left: calc(50% - 5px);
-    background-color: #eee;
-    border-radius: var(--border-radius);
   }
 }
 
