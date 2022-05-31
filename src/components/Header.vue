@@ -4,7 +4,7 @@
       <a href="/" class="header-fold-logo" alt="logo"></a>
       <div class="header-fold-title">{{ title }}</div>
     </div>
-    <div class="header-expand" :style="{'height': `${expandHeight}px`}">
+    <div class="header-expand wave" :style="{'height': `${expandHeight}px`}">
       <div v-if="!title" class="header-expand-logo"></div>
       <template v-else>
         <a href="/" class="header-expand-logo-icon" alt="logo"></a>
@@ -61,7 +61,7 @@ export default {
     align-items: center;
     border-bottom: 1px solid #ccc;
     box-shadow: 0 1px 3px rgb(18 18 18 / 10%);
-    background: var(--theme-color);
+    background-color: var(--theme-color);
   }
 
   &-fold {
@@ -95,6 +95,8 @@ export default {
   &-expand {
     justify-content: center;
     position: relative;
+    overflow: hidden;
+    will-change: transform;
 
     &-title {
       font-size: 60px;
@@ -124,6 +126,36 @@ export default {
         background-position: center;
       }
     }
+
+    &.wave {
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        display: inline-block;
+        position: absolute;
+        transform: translateY(100%);
+        background-color: #fff;
+      }
+
+      &::before {
+        height: 800px;
+        width: 800px;
+        border-radius: 30% 50% 35% 40%;
+        animation: 
+          wave-color 10s linear infinite alternate both, 
+          wave-rotate 9s linear infinite alternate;
+      }
+
+      &::after {
+        height: 1000px;
+        width: 1000px;
+        border-radius: 45% 35% 50% 35%;
+        animation:
+          wave-color 17s linear infinite alternate both,
+          wave-rotate 15s linear infinite alternate;
+      }
+    }
   }
 }
 
@@ -136,6 +168,12 @@ export default {
       }
     }
     &-expand {
+      &.wave {
+        &::before,
+        &::after {
+          content: none;
+        }
+      }
       &-title {
         display: -webkit-box;
         font-size: 48px;
