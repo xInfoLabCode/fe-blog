@@ -1,10 +1,10 @@
 <template>
   <div class="header">
-    <div v-show="isFold" class="header-fold">
+    <div v-show="isFold" class="header-fold" :style="{'height': `${foldHeight}px`}">
       <a href="/" class="header-fold-logo" alt="logo"></a>
       <div class="header-fold-title">{{ title }}</div>
     </div>
-    <div class="header-expand">
+    <div class="header-expand" :style="{'height': `${expandHeight}px`}">
       <div v-if="!title" class="header-expand-logo"></div>
       <template v-else>
         <a href="/" class="header-expand-logo-icon" alt="logo"></a>
@@ -22,6 +22,8 @@ export default {
   },
   data() {
     return {
+      expandHeight: 350,
+      foldHeight: 60,
       isFold: false
     }
   },
@@ -41,9 +43,7 @@ export default {
       window.removeEventListener('scroll', this.scrollHandler)
     },
     scrollHandler() {
-      const [minHeight, maxHeight] = [60, 350]
-
-      this.isFold = window.scrollY > maxHeight - minHeight
+      this.isFold = window.scrollY > this.expandHeight - this.foldHeight
     }
   }
 }
@@ -68,8 +68,7 @@ export default {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 60px;
-    line-height: 60px;
+    line-height: 100%;
     padding: 0 50px;
     z-index: 100;
 
@@ -94,7 +93,6 @@ export default {
   }
 
   &-expand {
-    height: 350px;
     justify-content: center;
     position: relative;
 
