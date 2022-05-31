@@ -23,8 +23,8 @@
       <div>
         <div class="title">reverse: Boolean <span>reverse为true则从左往右。默认false</span></div>
         <div class="radio-group">
-          <input name="reverse" type="radio" value="true" v-model="reverse" @change="refresh" />从左往右
-          <input name="reverse" type="radio" value="false" v-model="reverse" @change="refresh" />从右往左
+          <label><input name="reverse" type="radio" value="true" v-model="reverse" @change="refresh" />从左往右</label>
+          <label><input name="reverse" type="radio" value="false" v-model="reverse" @change="refresh" />从右往左</label>
         </div>
       </div>
       <div>
