@@ -41,7 +41,7 @@ export default {
       window.removeEventListener('scroll', this.scrollHandler)
     },
     scrollHandler() {
-      const [minHeight, maxHeight] = [60, 400]
+      const [minHeight, maxHeight] = [60, 350]
 
       this.isFold = window.scrollY > maxHeight - minHeight
     }
@@ -94,7 +94,7 @@ export default {
   }
 
   &-expand {
-    height: 400px;
+    height: 350px;
     justify-content: center;
     position: relative;
 
@@ -105,7 +105,8 @@ export default {
     }
 
     &-logo {
-      width: 80%;
+      width: 380px;
+      max-width: 80%;
       height: 200px;
       background-image: var(--logo-white);
       background-size: contain;
@@ -132,9 +133,11 @@ export default {
   .header {
     &-fold {
       padding: 0 10px !important;
+      &-title {
+        margin-left: 15px;
+      }
     }
     &-expand {
-      height: 300px;
       &-title {
         display: -webkit-box;
         font-size: 48px;

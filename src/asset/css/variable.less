@@ -1,3 +1,16 @@
+@theme-color: #3fb0ac;
+@theme-color-dark: #173143;
+
+@font-color: rgba(0, 0, 0, .65);
+@font-color-dark: rgba(0, 0, 0, .8);
+@font-color-light: rgba(0, 0, 0, .5);
+
+@font-size: 14px;
+@font-size-s: 12px;
+@font-size-l: 20px;
+
+@padding-h5: 10px;
+@border-radius:  8px;
 
 @min-width: 800px;
 @max-width: 1200px;
@@ -10,20 +23,21 @@
 :root {
   --font-family: "SF Pro Display",Roboto,Noto,Arial,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
 
-  --theme-color: #3fb0ac;
-  --code-bg-color: #173143;
+  --theme-color: @theme-color;
+  --theme-color-dark: @theme-color-dark;
+  --code-bg-color: @theme-color-dark;
 
-  --font-color: rgba(0, 0, 0, .65);
-  --font-color-dark: rgba(0, 0, 0, .8);
-  --font-color-light: rgba(0, 0, 0, .5);
+  --font-color: @font-color;
+  --font-color-dark: @font-color-dark;
+  --font-color-light: @font-color-light;
 
-  --font-size: 14px;
-  --font-size-s: 12px;
-  --font-size-l: 20px;
+  --font-size: @font-size;
+  --font-size-s: @font-size-s;
+  --font-size-l: @font-size-l;
 
-  --border-radius: 8px;
+  --border-radius: @border-radius;
 
-  --padding-h5: 10px;
+  --padding-h5: @padding-h5;
 
   --min-width: @min-width;
   --max-width: @max-width;
