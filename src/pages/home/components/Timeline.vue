@@ -126,6 +126,14 @@ export default {
 
         /deep/ .blog-item-description {
           line-height: 20px;
+          max-width: 100%;
+          center {
+            display: block;
+            text-align: center;
+          }
+          img {
+            max-width: 100%;
+          }
         }
       }
     }

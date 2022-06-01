@@ -1,7 +1,7 @@
 <template>
   <a class="blog-item blog-code" :href="blog.url">
     <div class="blog-item-title">{{ blog.name }} {{ blog.id }}</div>
-    <div class="blog-item-description">{{ blog.description }}</div>
+    <div class="blog-item-description" v-html="blog.description"></div>
   </a>
 </template>
 
