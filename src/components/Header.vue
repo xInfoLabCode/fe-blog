@@ -177,6 +177,7 @@ export default {
       &-title {
         display: -webkit-box;
         font-size: 48px;
+        line-height: 1.2em;
         margin-left: 10px !important;
         max-height: 175px;
         overflow: hidden;
