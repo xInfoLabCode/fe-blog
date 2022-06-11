@@ -6,7 +6,7 @@
           {{ link.text }}
         </a> 
       </div>
-      <a href="/" class="website-anonce">
+      <a href="/#/index" class="website-anonce">
         {{ slogan }}  &copy;2022 {{ title }}
       </a>
     </div>

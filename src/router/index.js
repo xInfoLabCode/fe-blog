@@ -7,6 +7,9 @@ import codeRoutes from './code'
 import markdownRoutes from './markdown'
 
 const router = new Router({
+  scrollBehavior() {
+    return { x: 0, y: 0 }
+  },
   routes: [
     {
       path: '*',

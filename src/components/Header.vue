@@ -1,13 +1,13 @@
 <template>
   <div class="header">
     <div v-show="isFold" class="header-fold" :style="{'height': `${foldHeight}px`}">
-      <a href="/" class="header-fold-logo" alt="logo"></a>
+      <a href="/#/index" class="header-fold-logo" alt="logo"></a>
       <div class="header-fold-title">{{ title }}</div>
     </div>
     <div class="header-expand wave" :style="{'height': `${expandHeight}px`}">
       <div v-if="!title" class="header-expand-logo"></div>
       <template v-else>
-        <a href="/" class="header-expand-logo-icon" alt="logo"></a>
+        <a href="/#/index" class="header-expand-logo-icon" alt="logo"></a>
         <div class="header-expand-title">{{ title }}</div>
       </template>
     </div>
