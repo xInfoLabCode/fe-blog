@@ -1,5 +1,7 @@
 # Fe-Blog
 
+![fe-blog](https://blog.xinfolab.com/readme/fe-blog.png)
+
 ## 前言
 
 该项目是一个基于vue2的纯前端博客项目，支持markdown博文，也可以同时展示博文和对应的前端页面demo
