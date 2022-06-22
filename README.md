@@ -26,7 +26,7 @@
 
 ``` shell
 # 克隆代码
-git clone git@github.com:RandomFE/fe-blog.git
+git clone git@github.com:xInfoLabCode/fe-blog.git
 
 # 推荐使用vscode启动开发
 cd fe-blog

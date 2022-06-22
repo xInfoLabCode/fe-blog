@@ -25,7 +25,7 @@ export default {
       title,
       slogan,
       friendLinks: [
-        { text: 'RandomFE', url: 'https://github.com/RandomFE' },
+        { text: 'xInfoLab Code', url: 'https://github.com/xInfoLabCode' },
         { text: 'Canvas Design', url: 'https://canvas-design.xinfolab.com/views/rotating-starry-sky.html' }
       ]
     }
