@@ -55,7 +55,9 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="less" scoped>
+@import "@/asset/css/variable.less";
+
 .fork-me {
   position: fixed;
   display: block;
@@ -67,5 +69,11 @@ export default {
   background: transparent url(./asset/img/fork-sprite.png) 0 0 no-repeat;
   z-index: 1000;
   color: transparent;
+}
+
+@media screen and (max-width: @min-width) {
+  .fork-me {
+    display: none;
+  }
 }
 </style>

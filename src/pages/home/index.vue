@@ -2,7 +2,7 @@
   <div class="home-page">
     <Header />
     <div class="content">
-      <Timeline :list="list" class="timeline-area" />
+      <BlogList :list="list" class="blog-list" />
     </div>
     <Footer />
   </div>
@@ -10,7 +10,7 @@
 
 <script>
 import Header from '@/components/Header.vue'
-import Timeline from './components/Timeline.vue'
+import BlogList from './components/BlogList.vue'
 
 import codeRoutes from '@/router/code'
 import markdownRoutes from '@/router/markdown'
@@ -18,7 +18,7 @@ import markdownRoutes from '@/router/markdown'
 export default {
   components: {
     Header,
-    Timeline
+    BlogList
   },
   data() {
     return {
@@ -56,7 +56,7 @@ export default {
     align-items: flex-start;
     min-height: 100vh;
 
-    .timeline-area {
+    .blog-list {
       width: 80%;
       max-width: @max-width;
       min-width: @min-width;
@@ -71,7 +71,7 @@ export default {
     .content {
       display: block;
       min-height: auto;
-      .timeline-area {
+      .blog-list {
         width: 100%;
         max-width: @min-width;
         min-width: auto;

@@ -1,6 +1,5 @@
 <template>
-  <div class="timeline">
-    <div class="time-col"></div>
+  <div class="content">
     <div class="blog-list">
       <div v-for="item in list" :key="item.url" :class="item.type" class="blog-row wow fadeInLeft">
         <Markdown v-if="item.type==='markdown'" :blog="item" />
@@ -42,29 +41,18 @@ export default {
 <style scoped lang="less">
 @import "@/asset/css/variable.less";
 
-.timeline {
+.content {
   display: flex;
   align-items: stretch;
   position: relative;
   
-  .time-col {
-    width: 15px;
-    margin-right: 20px;
-    background-color: #eee;
-    border-radius: var(--border-radius);
-  }
-
   .blog-list {
     flex: 1;
 
     .blog-row {
       display: flex;
       width: 100%;
-      margin-bottom: 25px;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
+      margin-bottom: 60px;
 
       &.markdown {
         justify-content: flex-end;
@@ -82,46 +70,19 @@ export default {
         position: relative;
         width: 100%;
         min-height: 100px;
-        padding: 10px 20px 20px;
+        padding: 20px;
         color: var(--font-color);
-        background-color: #f2f2f2;
         border-radius: var(--border-radius);
-        border: 1px solid #eee;
-        border-bottom: 3px solid #ccc;
-        transition: all 1s ease;
+        transition: all .3s ease;
 
         &:hover {
-          color: var(--theme-color);
-          background-color: #eee;
-          border-bottom: 3px solid var(--theme-color);
-
-          /deep/ .blog-item-title {
-            &::after {
-              height: 100%;
-              top: 0;
-              background-color: var(--theme-color);
-            }
-          }
+          background-color: #f0f0f0;
+          transform: scale(1.02);
         }
 
         /deep/ .blog-item-title {
-          font-size: 18px;
+          font-size: 25px;
           padding: 10px 0;
-
-          &:after {
-            content: '';
-            display: inline-block;
-            width: 10px;
-            height: 10px;
-            border-radius: 6px;
-            background-color: var(--theme-color);
-            position: absolute;
-            top: 25px;
-            left: -34px;
-            z-index: 10;
-            transition: all 1s ease;
-            animation: fadeIn 2s ease alternate both;
-          }
         }
 
         /deep/ .blog-item-description {
@@ -140,7 +101,7 @@ export default {
 }
 
 @media screen and (max-width: @min-width) {
-  .timeline {
+  .content {
     .blog-list {
       .blog-row {
         justify-content: flex-start;
@@ -151,9 +112,6 @@ export default {
           }
         }
       }
-    }
-    .time-col {
-      display: none;
     }
   }
 }
