@@ -62,6 +62,7 @@ export default {
     border-bottom: 1px solid #ccc;
     box-shadow: 0 1px 3px rgb(18 18 18 / 10%);
     background-color: var(--theme-color);
+    background-image: var(--linear-gradient);
   }
 
   &-fold {

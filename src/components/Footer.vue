@@ -48,6 +48,7 @@ export default {
   color: @font-color;
   font-size: .9em;
   background-color: @footer-color;
+  background-image: var(--linear-gradient);
 
   &-content {
     display: flex;
