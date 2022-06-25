@@ -52,7 +52,7 @@ export default {
     .blog-row {
       display: flex;
       width: 100%;
-      margin-bottom: 60px;
+      margin-bottom: 40px;
 
       &.markdown {
         justify-content: flex-end;
@@ -105,6 +105,7 @@ export default {
     .blog-list {
       .blog-row {
         justify-content: flex-start;
+        margin-bottom: 0;
         /deep/ .blog-item {
           width: 100%;
           .blog-item-title::after {

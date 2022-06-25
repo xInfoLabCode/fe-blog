@@ -76,6 +76,10 @@ export default {
         max-width: @min-width;
         min-width: auto;
         padding: var(--padding-h5);
+
+        &:last-child {
+          padding-bottom: 0;
+        }
       }
     }
   }

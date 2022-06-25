@@ -36,19 +36,16 @@ export default {
 <style scoped lang="less">
 @import "@/asset/css/variable.less";
 
-@footer-color: var(--theme-color);
-@font-color: white;
+@footer-color: rgba(0, 0, 0, .5);
 @margin: 15px;
 
 .footer {
   display: flex;
   justify-content: center;
   height: 100px;
-  margin-top: 50px;
-  color: @font-color;
+  margin: 50px 150px 0;
   font-size: .9em;
-  background-color: @footer-color;
-  background-image: var(--linear-gradient);
+  border-top: 1px solid #ddd;
 
   &-content {
     display: flex;
@@ -62,7 +59,6 @@ export default {
     .website-anonce {
       display: inline-block;
       margin-left: @margin;
-      color: @font-color;
     }
 
     .friend-links {
@@ -70,8 +66,6 @@ export default {
       justify-content: center;
 
       a {
-        color: @font-color;
-
         & + a {
           margin-left: @margin;
         }
@@ -83,6 +77,8 @@ export default {
 @media screen and (max-width: @min-width) {
   .footer {
     height: 80px;
+    font-size: .8em;
+    margin: 50px 20px 0;
 
     &-content {
       min-width: auto;
@@ -93,8 +89,12 @@ export default {
         height: 20px;
       }
 
+      .friend-links > a {
+        color: @footer-color;
+      }
       .website-anonce {
         margin-left: 0;
+        color: @footer-color;
       }
     }
   }
