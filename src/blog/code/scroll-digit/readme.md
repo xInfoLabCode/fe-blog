@@ -1,5 +1,7 @@
 # 滚动数字 scroll-digit
 
+相关源代码已迁移到 [xInfoLabCode/vue-scroll-digit](https://github.com/xInfoLabCode/vue-scroll-digit) 独立开发维护
+
 ## 滚动数字组件
 ``` javascript
 <template>

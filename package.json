@@ -25,6 +25,7 @@
     "normalize.css": "^8.0.1",
     "vue": "^2.6.14",
     "vue-router": "^3.5.3",
+    "vue-scroll-digit": "^0.1.1",
     "vue-worker": "^1.2.1",
     "wowjs": "^1.1.3"
   },

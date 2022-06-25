@@ -2,7 +2,7 @@
   <div class="main">
     <div class="head">scroll-digit</div>
     <div class="demo-area">
-      <scroll-digit
+      <VueScrollDigit
         :digits="digits"
         :fontSize="fontSize"
         :reverse="reverse==='true' ? true : false"
@@ -44,11 +44,11 @@
 </template>
 
 <script>
-import ScrollDigit from './component/index'
+import VueScrollDigit from 'vue-scroll-digit'
 
 export default {
   components: {
-    ScrollDigit
+    VueScrollDigit
   },
   data() {
     return {
