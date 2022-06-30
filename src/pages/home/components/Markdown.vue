@@ -1,5 +1,5 @@
 <template>
-  <a class="blog-item blog-markdown" :href="blog.url">
+  <a class="blog-item blog-markdown" :href="blog.url" target="blank">
     <div class="blog-item-title">{{ blog.name }}</div>
     <div class="blog-item-description">
       <center>
