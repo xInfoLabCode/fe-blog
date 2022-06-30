@@ -20,10 +20,9 @@
   },
   "dependencies": {
     "core-js": "^3.8.3",
-    "highlight": "^0.2.4",
     "mockjs": "^1.1.0",
     "normalize.css": "^8.0.1",
-    "vue": "^2.6.14",
+    "vue": "^2",
     "vue-router": "^3.5.3",
     "vue-scroll-digit": "^0.1.1",
     "vue-worker": "^1.2.1",
